@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTianna Williams, LMFT, CTRS, ABS | Embodied Artist</title>
+    <meta name="description" content="Sex Therapist, Certified Sexologist, and Embodiment Practitioner based in Long Beach, CA, serving Greater Los Angeles. Integrating therapy, expressive practices, and relationship work.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aubergine: '#2C221E', // Deep Espresso / Dark Earth Brown
+                        bone: '#F5F1E8',      // Soft Warm Beige
+                        terracotta: '#8C583C',// Rich Warm Earth Brown Accent
+                        gold: '#A39684',      // Soft Muted Taupe
+                        charcoal: '#383431',  // Warm Charcoal Grey
+                        dustRose: '#CEC5B9'   // Light Warm Grey-Beige
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar and base aesthetics */
+        body {
+            background-color: #F5F1E8;
+            color: #383431;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Editorial typography rules */
+        .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: -0.02em;
+            line-height: 0.95;
+        }
+
+        /* Subtle transition states */
+        .nav-scrolled {
+            background-color: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(44, 34, 30, 0.08);
+        }
+
+        .img-editorial {
+            filter: saturate(0.85) contrast(1.02);
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .img-editorial:hover {
+            transform: scale(1.02);
+        }
+
+        /* Thin subtle borders */
+        .border-thin {
+            border-color: rgba(44, 34, 30, 0.15);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-terracotta selection:text-bone relative">
+
+    <!-- Subtle Ambient Therapy & Somatic Background Image -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.12] mix-blend-multiply bg-cover bg-center bg-fixed bg-no-repeat" 
+         style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=2000&q=80'); filter: sepia(30%) contrast(110%);"
+         aria-hidden="true">
+    </div>
+
+    <!-- 1. HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Left Brand Title -->
+            <a href="#" class="group block">
+                <span class="text-xl md:text-2xl font-serif tracking-wide font-semibold text-aubergine block leading-none">EMBODIED ARTIST</span>
+                <span class="text-[10px] md:text-xs font-sans tracking-widest text-aubergine/70 uppercase mt-1 block">LaTianna Williams, LMFT, CTRS, ABS</span>
+            </a>
+
+            <!-- Navigation Links Desktop -->
+            <nav class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-medium text-charcoal/80">
+                <a href="#about" class="hover:text-terracotta transition-colors">About</a>
+                <a href="#services" class="hover:text-terracotta transition-colors">Work With Me</a>
+                <a href="#approach" class="hover:text-terracotta transition-colors">Approach</a>
+                <a href="#contact" class="hover:text-terracotta transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="inline-flex items-center space-x-2 text-xs uppercase tracking-widest px-5 py-3 border border-aubergine text-aubergine hover:bg-aubergine hover:text-bone transition-all duration-300">
+                    <span>Book a Consultation</span>
+                    <span class="text-sm">→</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-aubergine focus:outline-none p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-bone border-b border-aubergine/10 shadow-lg px-6 py-8 flex flex-col space-y-6 text-sm uppercase tracking-widest">
+            <a href="#about" class="mobile-link text-aubergine">About</a>
+            <a href="#services" class="mobile-link text-aubergine">Work With Me</a>
+            <a href="#approach" class="mobile-link text-aubergine">Approach</a>
+            <a href="#contact" class="mobile-link text-aubergine">Contact</a>
+            <a href="#contact" class="mobile-link inline-block text-center py-3 border border-aubergine bg-aubergine text-bone">Book a Consultation →</a>
+        </div>
+    </header>
+
+    <main class="pt-24 md:pt-32">
+        <!-- 2. HERO -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left Column Text -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-block text-xs uppercase tracking-[0.25em] text-terracotta font-semibold">
+                        Therapy • Sexology • Embodiment
+                    </div>
+                    
+                    <h1 class="font-serif-title text-5xl sm:text-7xl xl:text-8xl font-normal text-aubergine uppercase">
+                        Your Body<br>
+                        Has A Voice.<br>
+                        <span class="italic font-light text-terracotta">Learn</span> To Listen.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-charcoal/80 max-w-xl leading-relaxed font-light">
+                        Integrating therapy, embodiment, expressive practices, and relationship work to help you reconnect with yourself and create more intentional ways of living and relating.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#contact" class="inline-flex items-center justify-center space-x-3 bg-aubergine text-bone px-8 py-4 text-xs tracking-widest uppercase hover:bg-terracotta transition-colors duration-300">
+                            <span>Book a Consultation</span>
+                            <span class="text-sm">→</span>
+                        </a>
+                        <a href="#services" class="inline-flex items-center justify-center space-x-2 text-xs tracking-widest uppercase text-aubergine hover:text-terracotta transition-colors py-2">
+                            <span>Explore The Work</span>
+                            <span class="text-sm">↓</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Editorial Image -->
+                <div class="lg:col-span-5">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-dustRose/30 border border-aubergine/10">
+                        <img 
+                            src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=1200&q=80" 
+                            alt="Expressive movement and silhouette capturing embodiment and flow" 
+                            class="w-full h-full object-cover img-editorial"
+                            loading="eager"
+                        >
+                        <div class="absolute bottom-4 right-4 bg-bone/90 backdrop-blur-md px-3 py-1.5 text-[10px] uppercase tracking-widest text-aubergine border border-aubergine/10">
+                            Long Beach, CA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ABOUT -->
+        <section id="about" class="py-20 md:py-28 bg-bone border-t border-aubergine/10">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    
+                    <!-- Left Copy -->
+                    <div class="lg:col-span-7 space-y-8">
+                        <div class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold">
+                            Meet LaTianna
+                        </div>
+
+                        <h2 class="font-serif-title text-4xl sm:text-6xl text-aubergine uppercase">
+                            Therapy,<br>
+                            Embodiment,<br>
+                            Expression.
+                        </h2>
+
+                        <div class="space-y-6 text-charcoal/85 text-base sm:text-lg leading-relaxed font-light max-w-2xl">
+                            <p>
+                                LaTianna Williams is a Licensed Marriage & Family Therapist, Certified Sexologist, and expressive/embodiment practitioner whose work brings together clinical and experiential approaches.
+                            </p>
+                            <p>
+                                Her work explores the relationship between self, body, sexuality, relationships, and personal expression—creating space for people to better understand themselves and how they connect with others.
+                            </p>
+                        </div>
+
+                        <!-- Minimal Word Matrix -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-aubergine/10 max-w-lg">
+                            <div>
+                                <span class="block text-2xl font-serif text-aubergine">MIND</span>
+                                <span class="text-xs text-charcoal/60 uppercase tracking-wider">Clinical Insight</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-serif text-aubergine">BODY</span>
+                                <span class="text-xs text-charcoal/60 uppercase tracking-wider">Somatic Presence</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-serif text-aubergine">RELATIONSHIP</span>
+                                <span class="text-xs text-charcoal/60 uppercase tracking-wider">Connection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Portrait -->
+                    <div class="lg:col-span-5">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-dustRose/20 border border-aubergine/10">
+                            <img 
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" 
+                                alt="Thoughtful artistic portrait reflecting embodiment and presence" 
+                                class="w-full h-full object-cover img-editorial"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SERVICES / WAYS TO WORK TOGETHER -->
+        <section id="services" class="py-20 md:py-28 bg-bone border-t border-aubergine/10">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div>
+                        <div class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold mb-2">
+                            Practices & Offerings
+                        </div>
+                        <h2 class="font-serif-title text-4xl sm:text-6xl text-aubergine uppercase">
+                            Ways To Work Together
+                        </h2>
+                    </div>
+                    <p class="text-xs tracking-widest uppercase text-charcoal/60 mt-4 md:mt-0">
+                        Individual • Couples • Groups • Workshops
+                    </p>
+                </div>
+
+                <!-- 5 Offering Cards (Asymmetric List Layout) -->
+                <div class="space-y-12">
+
+                    <!-- Offering 01 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t border-aubergine/15 pt-8">
+                        <div class="md:col-span-1 text-xs font-serif text-terracotta text-lg">01</div>
+                        <div class="md:col-span-4">
+                            <h3 class="font-serif text-2xl sm:text-3xl text-aubergine">INDIVIDUAL THERAPY</h3>
+                        </div>
+                        <div class="md:col-span-4 text-sm text-charcoal/80 font-light leading-relaxed">
+                            For personal growth, emotional challenges, identity, relationships, life transitions, and deeper self-understanding.
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="h-32 w-full overflow-hidden border border-aubergine/10">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Individual Therapy space and personal reflection" class="w-full h-full object-cover img-editorial" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offering 02 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t border-aubergine/15 pt-8">
+                        <div class="md:col-span-1 text-xs font-serif text-terracotta text-lg">02</div>
+                        <div class="md:col-span-4">
+                            <h3 class="font-serif text-2xl sm:text-3xl text-aubergine">COUPLES + RELATIONSHIP THERAPY</h3>
+                        </div>
+                        <div class="md:col-span-4 text-sm text-charcoal/80 font-light leading-relaxed">
+                            For couples navigating communication, intimacy, sexuality, relationship distress, and connection.
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="h-32 w-full overflow-hidden border border-aubergine/10">
+                                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Authentic relational interaction and connection" class="w-full h-full object-cover img-editorial" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offering 03 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t border-aubergine/15 pt-8">
+                        <div class="md:col-span-1 text-xs font-serif text-terracotta text-lg">03</div>
+                        <div class="md:col-span-4">
+                            <h3 class="font-serif text-2xl sm:text-3xl text-aubergine">SEX THERAPY + SEXUAL HEALTH</h3>
+                        </div>
+                        <div class="md:col-span-4 text-sm text-charcoal/80 font-light leading-relaxed">
+                            A professional, affirming space to explore sexuality, intimacy, sexual concerns, and embodied self-connection.
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="h-32 w-full overflow-hidden border border-aubergine/10">
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Artistic representation of intimacy and touch" class="w-full h-full object-cover img-editorial" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offering 04 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t border-aubergine/15 pt-8">
+                        <div class="md:col-span-1 text-xs font-serif text-terracotta text-lg">04</div>
+                        <div class="md:col-span-4">
+                            <h3 class="font-serif text-2xl sm:text-3xl text-aubergine">EMBODIMENT + EXPRESSIVE PRACTICES</h3>
+                        </div>
+                        <div class="md:col-span-4 text-sm text-charcoal/80 font-light leading-relaxed">
+                            Integrating movement, theatre, creativity, and embodied practices into personal growth and therapeutic work.
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="h-32 w-full overflow-hidden border border-aubergine/10">
+                                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Embodied expressive gesture and dance movement" class="w-full h-full object-cover img-editorial" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offering 05 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t border-aubergine/15 pt-8 border-b pb-8">
+                        <div class="md:col-span-1 text-xs font-serif text-terracotta text-lg">05</div>
+                        <div class="md:col-span-4">
+                            <h3 class="font-serif text-2xl sm:text-3xl text-aubergine">TANTRA + EDUCATIONAL EXPERIENCES</h3>
+                        </div>
+                        <div class="md:col-span-4 text-sm text-charcoal/80 font-light leading-relaxed">
+                            Tantra education, meditation, mentorship, and related experiential offerings.
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="h-32 w-full overflow-hidden border border-aubergine/10">
+                                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Serene space for meditation and educational experiences" class="w-full h-full object-cover img-editorial" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. APPROACH -->
+        <section id="approach" class="py-20 md:py-28 bg-bone border-t border-aubergine/10">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="max-w-3xl space-y-6">
+                    <div class="text-xs uppercase tracking-[0.25em] text-terracotta font-semibold">
+                        Core Philosophy
+                    </div>
+
+                    <h2 class="font-serif-title text-4xl sm:text-6xl text-aubergine uppercase leading-none">
+                        Get Out Of Your Head.<br>
+                        Get Into Your Life.
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-charcoal/80 font-light leading-relaxed">
+                        LaTianna integrates Western clinical approaches with embodied, expressive, and Eastern-informed practices to help clients explore patterns through more than conversation alone.
+                    </p>
+                </div>
+
+                <!-- 3 Minimal Principles -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 pt-12 border-t border-aubergine/15">
+                    <div class="space-y-3">
+                        <div class="text-xs font-sans tracking-widest text-terracotta uppercase">01 / Methodology</div>
+                        <h3 class="font-serif text-2xl text-aubergine">CLINICAL</h3>
+                        <p class="text-sm text-charcoal/70 font-light leading-relaxed">
+                            Evidence-informed therapeutic work grounded in Marriage & Family Therapy practices.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-xs font-sans tracking-widest text-terracotta uppercase">02 / Somatics</div>
+                        <h3 class="font-serif text-2xl text-aubergine">EMBODIED</h3>
+                        <p class="text-sm text-charcoal/70 font-light leading-relaxed">
+                            Direct attention to physical sensation, emotional resonance, and lived bodily experience.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-xs font-sans tracking-widest text-terracotta uppercase">03 / Artistry</div>
+                        <h3 class="font-serif text-2xl text-aubergine">EXPRESSIVE</h3>
+                        <p class="text-sm text-charcoal/70 font-light leading-relaxed">
+                            Creativity, movement, and authentic expression as active pathways to therapeutic insight.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FINAL CTA + CONTACT -->
+        <section id="contact" class="py-20 md:py-28 bg-aubergine text-bone">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                    
+                    <!-- Left Info -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <div class="text-xs uppercase tracking-[0.25em] text-dustRose font-semibold mb-3">
+                                Connect
+                            </div>
+                            <h2 class="font-serif-title text-4xl sm:text-6xl text-bone uppercase">
+                                Ready To Explore What's Next?
+                            </h2>
+                        </div>
+
+                        <p class="text-bone/80 text-base font-light leading-relaxed">
+                            Start with a conversation about where you are, what you're looking for, and whether the work is a good fit.
+                        </p>
+
+                        <div class="space-y-4 pt-6 border-t border-bone/10">
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-dustRose">Practice</span>
+                                <span class="text-sm font-medium">LaTianna Williams, LMFT, CTRS, ABS</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-dustRose">Location</span>
+                                <span class="text-sm font-light">Long Beach, California • Serving Greater Los Angeles</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-dustRose">Phone</span>
+                                <a href="tel:+13234352845" class="text-sm font-light hover:text-dustRose transition-colors">323-435-2845</a>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-dustRose">Email</span>
+                                <a href="mailto:Contact.EmbodiedArtist@gmail.com" class="text-sm font-light hover:text-dustRose transition-colors">Contact.EmbodiedArtist@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Contact Form -->
+                    <div class="lg:col-span-7 bg-bone/5 p-8 sm:p-10 border border-bone/10">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-xs uppercase tracking-widest text-dustRose mb-2">Name *</label>
+                                    <input type="text" id="name" required class="w-full bg-bone/10 border border-bone/20 text-bone px-4 py-3 text-sm focus:outline-none focus:border-dustRose transition-colors" placeholder="Your Full Name">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-xs uppercase tracking-widest text-dustRose mb-2">Phone</label>
+                                    <input type="tel" id="phone" class="w-full bg-bone/10 border border-bone/20 text-bone px-4 py-3 text-sm focus:outline-none focus:border-dustRose transition-colors" placeholder="(323) 000-0000">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs uppercase tracking-widest text-dustRose mb-2">Email *</label>
+                                <input type="email" id="email" required class="w-full bg-bone/10 border border-bone/20 text-bone px-4 py-3 text-sm focus:outline-none focus:border-dustRose transition-colors" placeholder="you@domain.com">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs uppercase tracking-widest text-dustRose mb-2">Message *</label>
+                                <textarea id="message" rows="4" required class="w-full bg-bone/10 border border-bone/20 text-bone px-4 py-3 text-sm focus:outline-none focus:border-dustRose transition-colors" placeholder="How can LaTianna support you?"></textarea>
+                            </div>
+
+                            <div class="text-[11px] text-bone/60 leading-relaxed italic">
+                                Please do not include sensitive or confidential medical information in this initial contact form.
+                            </div>
+
+                            <button type="submit" class="w-full bg-terracotta hover:bg-dustRose hover:text-aubergine text-bone py-4 px-6 text-xs uppercase tracking-widest transition-colors duration-300 font-semibold">
+                                Send Message →
+                            </button>
+
+                            <div id="form-feedback" class="hidden text-xs text-center p-3 bg-bone/10 text-dustRose border border-dustRose/30">
+                                Thank you for your inquiry. LaTianna will review your message and respond shortly.
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-charcoal text-bone/80 py-16 border-t border-bone/10 text-xs">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-bone/10">
+                
+                <!-- Col 1 -->
+                <div class="md:col-span-5 space-y-3">
+                    <span class="text-xl font-serif text-bone block tracking-wide">EMBODIED ARTIST</span>
+                    <p class="text-bone/60 font-light max-w-sm">
+                        LaTianna Williams, LMFT, CTRS, ABS
+                    </p>
+                    <p class="text-bone/50 text-[11px] tracking-wider uppercase">
+                        Long Beach, California • Serving Greater Los Angeles
+                    </p>
+                </div>
+
+                <!-- Col 2 Links -->
+                <div class="md:col-span-4 space-y-2 flex flex-col uppercase tracking-widest text-[11px]">
+                    <a href="#about" class="hover:text-terracotta transition-colors">About</a>
+                    <a href="#services" class="hover:text-terracotta transition-colors">Work With Me</a>
+                    <a href="#approach" class="hover:text-terracotta transition-colors">Approach</a>
+                    <a href="#contact" class="hover:text-terracotta transition-colors">Contact</a>
+                </div>
+
+                <!-- Col 3 Verified Social Profiles -->
+                <div class="md:col-span-3 space-y-4">
+                    <span class="block text-[11px] uppercase tracking-widest text-dustRose">Verified Profiles</span>
+                    <div class="flex items-center space-x-4">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/embodiedartist/" target="_blank" rel="noopener noreferrer" aria-label="LaTianna Williams Instagram Profile" class="p-2 border border-bone/20 hover:border-dustRose hover:text-dustRose transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/latianna" target="_blank" rel="noopener noreferrer" aria-label="LaTianna Williams LinkedIn Profile" class="p-2 border border-bone/20 hover:border-dustRose hover:text-dustRose transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <!-- Substack -->
+                        <a href="https://substack.com/@embodiedartist" target="_blank" rel="noopener noreferrer" aria-label="LaTianna Williams Substack Profile" class="p-2 border border-bone/20 hover:border-dustRose hover:text-dustRose transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Legal -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-bone/50 text-[11px] space-y-4 sm:space-y-0">
+                <div>
+                    © 2026 Embodied Artist. All Rights Reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header Scroll Effects
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('nav-scrolled');
+                } else {
+                    header.classList.remove('nav-scrolled');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Form Submit Interaction (No Alert)
+            const form = document.getElementById('contact-form');
+            const feedback = document.getElementById('form-feedback');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                feedback.classList.remove('hidden');
+                form.reset();
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 6000);
+            });
+        });
+    </script>
+</body>
+</html>
